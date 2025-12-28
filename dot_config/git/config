@@ -1,0 +1,56 @@
+
+[alias]
+	quicklog = log --pretty=format:\"%h %C(cyan)%cr%Creset %Cgreen%s %Cred%d%Creset\"
+	bam = branch
+	shortlog = log --pretty=format:"%C(cyan)%<(15,trunc)%cr %C(blue)%<(25,trunc)%cn %C(green)%<(50, trunc)%s %Creset"
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --branches
+	squash = !"squash.sh"
+	delete-all-branches = !"git for-each-ref --format \"%(refname:short)\" refs/heads | grep -v \"master\\|main\" | xargs git branch -D"
+
+[core]
+	pager = delta
+
+[delta]
+	file-style = DeepPink bold
+	file-decoration-style = "#8a0f5d" bold ul ol
+	line-numbers = true
+	navigate = true
+	pager = ov --quit-if-one-screen
+
+[diff]
+	algorithm = histogram
+	compactionHeuristic = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[init]
+	templatedir = '~/.config/git/templates'
+
+[interactive]
+	diffFilter = delta --color-only
+
+[merge]
+	conflictStyle = zdiff3
+
+[push]
+	default = current
+
+[rerere]
+	enabled = true
+	autoUpdate = true
+
+[submodule]
+	recurse = true
+	propogateBranches = true
+	fetchJobs = 0
+
+[user]
+	# email = youremail@web.com
+	# name = Your Name
+
+[pull]
+	rebase = false

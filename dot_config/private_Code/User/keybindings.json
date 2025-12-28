@@ -1,0 +1,99 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "shift+f12",
+        "command": "-editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "shift+f12",
+        "command": "-goToPreviousReference",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "shift+f12",
+        "command": "editor.gotoNextSymbolFromResult",
+        "when": "hasSymbols"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.gotoNextSymbolFromResult",
+        "when": "hasSymbols"
+    },
+    {
+        "key": "shift+f12",
+        "command": "goToNextReference",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "f12",
+        "command": "-goToNextReference",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "f12",
+        "command": "editor.action.peekTypeDefinition"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execInREPL",
+        "when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "extension.helixKeymap.enableHelix",
+        "when": "!extension.helixKeymap.commandMode && !extension.helixKeymap.insertMode && !extension.helixKeymap.normalMode && !extension.helixKeymap.selectMode && !extension.helixKeymap.visualMode"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "extension.helixKeymap.enterDisabledMode",
+        "when": "extension.helixKeymap.insertMode || extension.helixKeymap.normalMode || extension.helixKeymap.selectMode || extension.helixKeymap.visualMode || extension.helixKeymap.commandMode"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "escape",
+        "command": "extension.helixKeymap.escapeKey",
+        "when": "editorTextFocus && (extension.helixKeymap.commandMode || extension.helixKeymap.insertMode || extension.helixKeymap.normalMode || extension.helixKeymap.selectMode || extension.helixKeymap.visualMode)"
+    },
+    {
+        "key": "escape",
+        "command": "-extension.helixKeymap.escapeKey",
+        "when": "editorTextFocus"
+    }
+]
