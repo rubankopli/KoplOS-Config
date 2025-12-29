@@ -20,6 +20,13 @@ config.audible_bell = 'Disabled'
 -- Don't prompt for confirmation on exit
 config.window_close_confirmation = 'NeverPrompt'
 
+-- Set the default shell to `fish`
+config.default_prog = { '/usr/bin/fish' }
+
+--------------------
+--- * BEHAVIOR * ---
+--------------------
+
 -----------------------
 --- * KEYBINDINGS * ---
 -----------------------
@@ -104,20 +111,6 @@ dynamic_background.apply_to_config(config)
 --------------------
 --- * LAUNCHER * ---
 --------------------
-
-------------------------------
--- Windows Launcher Options --
-------------------------------
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    config.launch_menu =
-    {
-        {
-            args = { 'powershell.exe', '-NoLogo', '-NoExit' },
-            label = 'Powershell',
-        },
-    }
-end
-
 
 
 -- and finally, return the configuration to wezterm --
